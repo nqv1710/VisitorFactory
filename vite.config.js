@@ -18,5 +18,19 @@ export default defineConfig({
             },
         }),
         vuetify(),
+
     ],
+    server: {
+        host: '192.168.10.53',  // Đảm bảo đúng IP của server
+        port: 5173,
+        strictPort: true,
+        hmr: {
+            host: '192.168.10.53',
+        },
+        cors: {
+            origin: ['http://khodien.ringnet.vn'],
+            methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+            credentials: true,
+        }
+    }
 });
